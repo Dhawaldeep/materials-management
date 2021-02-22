@@ -1,0 +1,6 @@
+apps:
+  - name: conaug-recruitment-backend-service
+    script: npm run prod
+    env:
+        ENV: production
+        PORT: 3000

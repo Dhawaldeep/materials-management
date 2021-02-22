@@ -1,0 +1,31 @@
+<div class="form" [formGroup]="form">
+    <div class="form-control">
+        <label>Name</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div class="form-control">
+        <label>Color</label>
+        <div class="picker-toggle" (click)="hide = !hide" [style.backgroundColor]="colorVal"></div>
+        <div class="picker" [ngClass]="{'hide': hide}">
+            <color-sketch (mouseup)="hide = !hide" (onChangeComplete)="changeComplete($event)"></color-sketch>
+        </div>
+    </div>
+    <div class="form-control">
+        <label>Volume (m<sup>3</sup>)</label>
+        <input type="number" min="0" step="1" formControlName="volume">
+    </div>
+    <div class="form-control">
+        <label>Cost (USD per m<sup>3</sup>)</label>
+        <input type="number" min="0" step="0.1" formControlName="cost">
+    </div>
+    <div class="form-control">
+        <label>Delivery Date</label>
+        <div class="date-form-wrapper">
+            <mat-form-field style="width: 100%;">
+                <input matInput formControlName="deliveryDate" [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker startView="month" [startAt]="now" #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

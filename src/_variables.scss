@@ -1,0 +1,121 @@
+@import '~@angular/material/theming';
+
+$custom-primary-palette: (
+    50 : #e4e4e4,
+    100 : #bbbbbc,
+    200 : #8e8e90,
+    300 : #616164,
+    400 : #3f3f42,
+    500 : #1d1d21,
+    600 : #1a1a1d,
+    700 : #151518,
+    800 : #111114,
+    900 : #0a0a0b,
+    A100 : #5252ff,
+    A200 : #1f1fff,
+    A400 : #0000eb,
+    A700 : #0000d2,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$custom-accent-palette: (
+    50 : #e0eefb,
+    100 : #b3d6f4,
+    200 : #80baed,
+    300 : #4d9ee6,
+    400 : #268ae0,
+    500 : #0075db,
+    600 : #006dd7,
+    700 : #0062d2,
+    800 : #0058cd,
+    900 : #0045c4,
+    A100 : #ecf2ff,
+    A200 : #b9cdff,
+    A400 : #86a8ff,
+    A700 : #6d96ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$custom-warn-palette: (
+    50 : #ffe9ea,
+    100 : #ffc7c9,
+    200 : #ffa2a6,
+    300 : #ff7c82,
+    400 : #ff6067,
+    500 : #ff444c,
+    600 : #ff3e45,
+    700 : #ff353c,
+    800 : #ff2d33,
+    900 : #ff1f24,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffcecf,
+    A700 : #ffb5b6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$materials-management-primary: mat-palette($custom-primary-palette, 500, 300, 900, 100);
+$materials-management-accent: mat-palette($custom-accent-palette, 500);
+
+// The warn palette is optional (defaults to red).
+$materials-management-warn: mat-palette($custom-warn-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$materials-management-theme: mat-dark-theme((
+  color: (
+    primary: $materials-management-primary,
+    accent: $materials-management-accent,
+    warn: $materials-management-warn,
+  )
+));

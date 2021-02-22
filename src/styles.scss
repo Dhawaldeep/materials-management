@@ -1,1 +1,42 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+@import "./variables";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($materials-management-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.container {
+  padding: 0px 20px;
+  background-color: mat-color($materials-management-primary, "default");
+  color: mat-color($materials-management-primary, "text");
+  height: fit-content;
+  min-height: 100vh;
+  .production-wrapper {
+    display: flex;
+    height: 400px;
+    padding: 30px;
+    justify-content: flex-start;
+    border: 1px solid #565664;
+    background-color: mat-color($materials-management-primary, 'darker');
+  }
+}

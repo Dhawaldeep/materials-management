@@ -1,0 +1,2 @@
+<button color="accent" (click)="addMaterial()" mat-flat-button><mat-icon>add</mat-icon> Add</button>
+<button color="warn" [disabled]="canDelete | async" (click)="deleteMaterial()" mat-flat-button><mat-icon>delete</mat-icon> Delete</button>

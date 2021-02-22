@@ -1,0 +1,86 @@
+@import "~@angular/material/theming";
+@import "../../../variables";
+
+div.form {
+    display: grid;
+    width: 100%;
+    min-width: 400px;
+    grid-template-columns: 40% 40%;
+    column-gap: 20%;
+    .form-control {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 10px 0px;
+        width: 100%;
+        position: relative;
+        label {
+            color: white;
+        }
+        .picker-toggle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .picker {
+            position: absolute;
+            z-index: 10;
+            top: 80px;
+            width: 200px;
+        }
+        .hide {
+            display: none;
+        }
+        .date-form-wrapper{
+            border-radius: 5px;
+            background: mat-color($materials-management-primary, "lighter") !important;
+        }
+    }
+    .form-control>input {
+        display: block;
+        height: 24px;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        background: mat-color($materials-management-primary, "lighter") !important;
+    }
+    input:focus{
+        outline: none !important;
+    }
+    
+}
+:host ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0px !important;
+    // position: absolute;
+    // height: 24px;
+    color: white;
+    font-size:16px !important;
+    // background: mat-color($materials-management-primary, "lighter") !important;
+    // border-radius: 5px;
+}
+:host ::ng-deep .mat-form-field-infix{
+    padding: 0px !important;
+    border-top: 0 !important;
+    input{
+        height: 24px;
+        position: relative;
+        top: 3px;
+        left: 3px;
+    }
+}
+:host ::ng-deep .mat-form-field-underline {
+    display: none !important;
+    height: 0px !important;
+    background-color: mat-color($materials-management-primary, "lighter") !important;
+}
+.mat-icon-button{
+    font-size: 16px;
+}
+@media only screen and (max-width: 592px) {
+    div.form {
+        min-width: 0px;
+        grid-template-columns: 100%;
+        column-gap: 0%;
+    }
+}

@@ -1,0 +1,22 @@
+<div class="content-wrapper">
+  <mat-selection-list (selectionChange)="onListSelect($event)" [multiple]="false">
+      <mat-list-option [value]="material" [selected]="material.id == (selectedId | async)" *ngFor="let material of materials" color="accent">
+          <div matListAvatar [style.backgroundColor]="material.color || '#F7B500'"></div>
+          <h3 matLine>{{material.name}}</h3>
+          <p matLine>
+            {{material.volume}} m <sup>3</sup>
+          </p>
+      </mat-list-option>
+      <!-- <mat-list-option color="accent">
+          <div matListAvatar [style.backgroundColor]="'brown'"></div>
+          <h3 matLine>Gravel</h3>
+          <p matLine>
+            1000 m <sup>3</sup>
+          </p>
+      </mat-list-option> -->
+  </mat-selection-list>
+  <div class="total-cost">
+    <span>Total Cost:</span>
+    <span>${{totalCost  | number:'1.2-2'}}</span>
+  </div>
+</div>
