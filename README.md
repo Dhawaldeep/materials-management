@@ -12,7 +12,7 @@ Run using
 `npm run dev`
 
 
-This will create a EXPRESS NODE TS backend server running at `http://localhost:3000/` with an integrated REST API at `http://localhost:3000/api`.
+This will create a EXPRESS NODE TS backend server running at `http://localhost:3000/` with an integrated REST API at `http://localhost:3000/api`
 Data is stored in memory of the Node Server
 
 To visit the Material Management Web Application built using Angular Custom Elements `@angular/custom-elements` open
@@ -42,4 +42,17 @@ Alternatively, to view it as an Angular Application open
 - Node TS with in memory data storage
 - Used tsc compiler to target and target ES6
 - Express Framework for handling routes
-- Used Abstract class and static properties for preventing creation of multiple instance of the data mode
+- Used Abstract class and static properties for preventing creation of multiple instance of the data model
+
+
+## Deployment
+Before deployment generate `JS` build using
+`npm run build`
+or
+integrate it to a CI/CD runner YAML configuration  
+Use PM2 process manager in VM Instance with a nginx reverse proxy connecting the 8080 port to local 3000 and execute
+`PM2 start app.yml`
+
+
+    I have written some unit tests which are mostly angular generated. Most of the time was consumed in developing the UI and customizing the angular components
+    Total Hours Taken: 8hrs
