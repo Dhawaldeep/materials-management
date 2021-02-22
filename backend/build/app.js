@@ -2,7 +2,7 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _a;
+var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const cors = require("cors");
@@ -16,10 +16,15 @@ app.use(body_parser_1.urlencoded({ extended: true }));
 if (env_1.ENV_VAR.ENV === 'development')
     app.use(cors());
 app.use('/api', materials_router_1.default);
-app.use('/', express.static(path_1.join((_a = require.main) === null || _a === void 0 ? void 0 : _a.path, '..', env_1.ENV_VAR.WEBAPP == 'WEBC' ? 'public' : 'angular')));
+app.use('/custom', express.static(path_1.join((_a = require.main) === null || _a === void 0 ? void 0 : _a.path, '..', 'public')));
+app.get('/custom', (_, res) => {
+    var _a;
+    res.sendFile(path_1.join((_a = require.main) === null || _a === void 0 ? void 0 : _a.path, '..', 'public', 'index.html'));
+});
+app.use('/', express.static(path_1.join((_b = require.main) === null || _b === void 0 ? void 0 : _b.path, '..', 'angular')));
 app.get('/', (_, res) => {
     var _a;
-    res.sendFile(path_1.join((_a = require.main) === null || _a === void 0 ? void 0 : _a.path, '..', env_1.ENV_VAR.WEBAPP == 'WEBC' ? 'public' : 'angular', 'index.html'));
+    res.sendFile(path_1.join((_a = require.main) === null || _a === void 0 ? void 0 : _a.path, '..', 'angular', 'index.html'));
 });
 app.get('/*', (_, res) => {
     res.redirect('/');

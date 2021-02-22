@@ -1,27 +1,45 @@
 # MaterialsManagement
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+## Project Setup
+Navigate to backend directory using
+`cd backend`
+Install the packages using 
+`npm install`
+
 
 ## Development server
+Run using
+`npm run dev`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+This will create a EXPRESS NODE TS backend server running at `http://localhost:3000/` with an integrated REST API at `http://localhost:3000/api`.
+Data is stored in memory of the Node Server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To visit the Material Management Web Application built using Angular Custom Elements `@angular/custom-elements` open
+`http://localhost:3000/custom`
 
-## Build
+Alternatively, to view it as an Angular Application open
+`http://localhost:3000`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## About the development process
+### UI
+- Built using customized Angular Material components
+- Used mainly Flex and Grid
+- ngx-color-picker component library was used for color picker
 
-## Running end-to-end tests
+### Application Logic
+- Used NGRX module for managing state of the application and making the app more reactive
+- Single State - Material State
+- Follows optimistic approach the data is removed from the application state befor the server
+- For handling unremoved and unsaved materials ngx-connection-service module is used to monitor the server connnection status.
+- Contains Root and a lazy loaded feature module with a guard to prevent loading if any new or existing material is not set for upation
+- Side effects like http requests and checking the connection status are handled by the NGRX Effects
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Server Logic
+- Node TS with in memory data storage
+- Used tsc compiler to target and target ES6
+- Express Framework for handling routes
+- Used Abstract class and static properties for preventing creation of multiple instance of the data mode

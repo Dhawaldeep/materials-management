@@ -22,9 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConnectionServiceModule } from 'ngx-connection-service';
 import { materialReducer } from './store/materials.reducer';
 import { AppState } from './store/app.state';
-import { createCustomElement } from '@angular/elements';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+// import { createCustomElement } from '@angular/elements';
+// import { MatDatepickerModule } from '@angular/material/datepicker';
+// import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -45,26 +45,26 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatIconModule,
     MatSnackBarModule,
     ConnectionServiceModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
+    // MatDatepickerModule,
+    // MatNativeDateModule,
     StoreModule.forRoot<AppState>({ material: materialReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([MaterialEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
-  // bootstrap: [AppComponent],
-  entryComponents: [AppComponent]
+  bootstrap: [AppComponent],
+  // entryComponents: [AppComponent]
 })
 export class AppModule {
-  constructor(private injector: Injector) {
-    const myElement = createCustomElement(AppComponent, { injector });
-    customElements.define('mtl-manag-element', myElement);
-  }
-  ngDoBootstrap(appRef: ApplicationRef) {
-    if (document.querySelector('app-root')) {
-      appRef.bootstrap(AppComponent);
-    }
-  }
+  // constructor(private injector: Injector) {
+  //   const myElement = createCustomElement(AppComponent, { injector });
+  //   customElements.define('mtl-manag-element', myElement);
+  // }
+  // ngDoBootstrap(appRef: ApplicationRef) {
+  //   if (document.querySelector('app-root')) {
+  //     appRef.bootstrap(AppComponent);
+  //   }
+  // }
 
 }
