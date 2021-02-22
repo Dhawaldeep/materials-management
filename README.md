@@ -47,9 +47,10 @@ Alternatively, to view it as an Angular Application open
 
 ## Deployment
 Before deployment generate `JS` build using
-`npm run build`
+`npm run prod`
 or
 integrate it to a CI/CD runner YAML configuration  
+
 Use PM2 process manager in VM Instance with a nginx reverse proxy connecting the 8080 port to local 3000 and execute
 `PM2 start app.yml`
 

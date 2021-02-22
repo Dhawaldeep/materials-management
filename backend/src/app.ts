@@ -22,6 +22,7 @@ app.get('/custom', (_: Request, res: Response)=>{
     res.sendFile(join(require.main?.path!, '..', 'public', 'index.html'))
 })
 
+
 app.use('/', express.static(join(require.main?.path!, '..', 'angular')));
 
 app.get('/', (_: Request, res: Response)=>{
