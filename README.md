@@ -18,6 +18,8 @@ Run using
 This will create a EXPRESS NODE TS backend server running at `http://localhost:3000/` with an integrated REST API at `http://localhost:3000/api`
 Data is stored in memory of the Node Server
 
+To view the REST API Documentation open `http://localhost:3000/api/doc`
+
 To visit the Material Management Web Application built using Angular Custom Elements `@angular/custom-elements` open
 `http://localhost:3000/custom`
 
@@ -50,7 +52,7 @@ Alternatively, to view it as an Angular Application open
 
 ## Deployment
 Before deployment generate `JS` build using
-`npm run prod`
+`npm run prod` & update .env by replacing ENV=development with ENV=production
 or
 integrate it to a CI/CD runner YAML configuration  
 
