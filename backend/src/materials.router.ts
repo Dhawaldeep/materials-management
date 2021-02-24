@@ -1,8 +1,8 @@
 import { Router } from "express";
 
 import { MaterialsController } from "./materials.controller";
-// import swagger from "swagger-jsdoc";
-// import swaggerUI from "swagger-ui-express";
+// import * as swagger from "swagger-jsdoc";
+// import * as swaggerUI from "swagger-ui-express";
 
 /**
  * @swagger
@@ -220,7 +220,7 @@ router.put('/', controller.update);
  */
 router.delete('/:id', controller.delete);
 
-// const swaggerSpec = swagger({
+// const swaggerSpec = swagger.default({
 //     definition: {
 //         openapi: '3.0.0', // Specification (optional, defaults to swagger: '2.0')
 //         info: {
