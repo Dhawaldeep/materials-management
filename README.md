@@ -1,5 +1,8 @@
 # MaterialsManagement
 
+## Minimum Node Version Required
+12.x
+
 ## Project Setup
 Navigate to backend directory using
 `cd backend`
