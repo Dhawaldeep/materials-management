@@ -2,8 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const materials_controller_1 = require("./materials.controller");
-// import * as swagger from "swagger-jsdoc";
-// import * as swaggerUI from "swagger-ui-express";
 /**
  * @swagger
  *
@@ -44,8 +42,8 @@ const controller = new materials_controller_1.MaterialsController();
  *                      properties:
  *                          data:
  *                              type: array
- *                                  items:
- *                                      $ref: '#definitions/Material'
+ *                              items:
+ *                                  $ref: '#definitions/Material'
  *                          message:
  *                              type: string
  *      '400':
@@ -104,19 +102,18 @@ router.get('/', controller.getAll);
  *              schema:
  *               $ref: '#components/schemas/Error'
  *
- *  components:
- *      schemas:
- *        # Schema for error response body
- *        Error:
- *          type: object
- *          properties:
- *              status:
- *                  type: integer
- *              data:
- *                  type: object
- *              message:
- *                  type: string
- *
+ * components:
+ *     schemas:
+ *       # Schema for error response body
+ *       Error:
+ *         type: object
+ *         properties:
+ *             status:
+ *                 type: integer
+ *             data:
+ *                 type: object
+ *             message:
+ *                 type: string
  */
 router.post('/', controller.create);
 /**
@@ -210,21 +207,4 @@ router.put('/', controller.update);
  *
  */
 router.delete('/:id', controller.delete);
-// const swaggerSpec = swagger.default({
-//     definition: {
-//         openapi: '3.0.0', // Specification (optional, defaults to swagger: '2.0')
-//         info: {
-//             title: 'Material Management Rest API', // Title (required)
-//             version: '0.0.0', // Version (required)
-//         },
-//         basePath: '/api',
-//         tags: [
-//             {
-//                 name: 'Material',
-//                 description: 'Handles saving, updation, deletion and operations of material'
-//             },
-//         ]
-//     }
-// })
-// router.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
 exports.default = router;
